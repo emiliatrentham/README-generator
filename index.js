@@ -35,7 +35,7 @@ const questions = [
     },
     {
         type: "input",
-        message: "What would you like to title your project?",
+        message: "What is the name of your project?",
         name: "title",
     },
     {
@@ -51,7 +51,7 @@ const questions = [
     {
         type: "input",
         name: "usage",
-        message: "Provide instructions and examples of your project in use.",
+        message: "What is the purpose of this project?",
     },
     {
         type: "list",
@@ -67,7 +67,7 @@ const questions = [
     {
         type: "input",
         name: "contributing",
-        message: "If applicable, provide guidelines on how other developers can contribute to your project.",
+        message: "How can other developers contribute to your project.",
     },
     {
         type: "input",
@@ -91,8 +91,8 @@ async function init() {
     try {
 
         // Prompt Inquirer questions
-        const userAnswer = await inquirer.prompt(questions);
-        console.log("Your responses: ", userAnswer);
+        const userAnswers = await inquirer.prompt(questions);
+        console.log("Your responses: ", userAnswers);
         console.log("Thank you for your responses! Fetching your GitHub data next...");
     
         // Call GitHub API to fetch user info

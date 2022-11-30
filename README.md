@@ -66,5 +66,3 @@ MIT License
 Contact me with any questions!
 
 GitHub: [@emiliatrentham](https://github.com/emiliatrentham)
-
-Email: emiliatrentdev@gmail.com

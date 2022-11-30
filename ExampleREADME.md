@@ -15,7 +15,6 @@
 - [License](#license)
 - [Contributing](#contributing)
 - [Tests](#tests)
-- [Questions](#questions)
 
   ## Installation
   Git clone GitHub repo to local machine. Run npm i to install the npm package dependencies. Run the application by typing node index.js in the command line.

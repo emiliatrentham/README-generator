@@ -29,7 +29,6 @@ function generateMarkdown(data, userInfo) {
 - [License](#license)
 - [Contributing](#contributing)
 - [Tests](#tests)
-- [Questions](#questions)
 
   ## Installation
   ${data.installation}

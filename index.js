@@ -1,4 +1,3 @@
-// Dependencies and variables
 // External packages
 const inquirer = require('inquirer');
 const fs = require("fs");
@@ -8,7 +7,7 @@ const util = require('util');
 const generateMarkdown = require("./utils/generateMarkdown");
 const api = require("./utils/api");
 
-// Inquirer prompts for userResponses
+// Inquirer prompt 
 const questions = [
     {
         type: "input",
@@ -77,7 +76,7 @@ const questions = [
     }
 ];
 
-// TODO: Create a function to write README file
+// Write README file
 function writeToFile(fileName, data) {
     fs.writeFile(fileName, data, (err) => {
         err ? console.error(err) : console.log("Success! Your README.md file has been generated");  
@@ -87,25 +86,25 @@ function writeToFile(fileName, data) {
 
 const writeFileAsync = util.promisify(writeToFile);
 
-// Main function
+// Master function
 async function init() {
     try {
 
         // Prompt Inquirer questions
-        const userResponses = await inquirer.prompt(questions);
-        console.log("Your responses: ", userResponses);
+        const userAnswer = await inquirer.prompt(questions);
+        console.log("Your responses: ", userAnswer);
         console.log("Thank you for your responses! Fetching your GitHub data next...");
     
-        // Call GitHub api for user info
-        const userInfo = await api.getUser(userResponses);
-        console.log("Your GitHub user info: ", userInfo);
+        // Call GitHub API to fetch user info
+        const userInfo = await api.getUser(userAnswers);
+        console.log("GitHub user info: ", userInfo);
     
-        // Pass Inquirer userResponses and GitHub userInfo to generateMarkdown
-        console.log("Generating your README next...")
-        const markdown = generateMarkdown(userResponses, userInfo);
+        // Pass Inquirer answers and GitHub user info to build README
+        console.log("Building your README...")
+        const markdown = generateMarkdown(userAnswers, userInfo);
         console.log(markdown);
     
-        // Write markdown to file
+        // Draft markdown to file
         await writeFileAsync('ExampleREADME.md', markdown);
 
     } catch (error) {

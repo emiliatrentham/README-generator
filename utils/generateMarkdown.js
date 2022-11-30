@@ -24,7 +24,6 @@ function generateMarkdown(data, userInfo) {
   🔍 ${data.description}
 
   ## Table of Contents
-- [Description](#description)
 - [Installation](#installation)
 - [Usage](#usage)
 - [License](#license)
@@ -36,7 +35,6 @@ function generateMarkdown(data, userInfo) {
   ${data.installation}
 
   ## Usage
-  *Instructions and examples for use:*
   ${data.usage}
 
   ## Licenses
@@ -51,16 +49,13 @@ function generateMarkdown(data, userInfo) {
   *Application tests if any and how to run them:*
   ${data.tests}
 
-  ---
   ## Questions?
 
   <img src="${userInfo.avatar_url}" alt="${userInfo.login}" width="40%" />
 
-  Contact me with any questions! <br />
-
   GitHub: [@${userInfo.login}](${userInfo.html_url})
  
- _Made with ❤️ by [README-generator](https://github.com/emiliatrentham/README-generator)_
+  _Made with ❤️ by [README-generator](https://github.com/emiliatrentham/README-generator)_
 `
 }
 
